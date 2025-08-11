@@ -24,14 +24,24 @@
     </nav>
     <main>
         <h1>Hello!, <span class="username"></span> <br>You are logged in</h1>
-        <div class="login-container">
+        <div class="signup login">
             <h2>Login</h2>
             <form action=""class="Login-form">
                 <input type="text" name="username" id="loginUser" placeholder="User Name">
                 <input type="password" name="password" id="loginPass" placeholder="Password">
-                <button class="btn">Submin</button>
+                <button class="btn">Login</button>
             </form>
-            <p>Don't have a account?<a href="#">Register</a></p>
+            <p>Don't have an account?<a href="#">Register</a></p>
+        </div>
+        <div class="signup register">
+            <h2>Register</h2>
+            <form action=""class="Login-form">
+                <input type="text" name="name" id="name" placeholder="Name">
+                <input type="text" name="username" id="Reg-User" placeholder="User Name">
+                <input type="password" name="password" id="Reg-Pass" placeholder="Password">
+                <button class="btn">Register</button>
+            </form>
+            <p>Already have an account?<a href="#">Login</a></p>
         </div>
         <span class="loader"></span>
     </main>

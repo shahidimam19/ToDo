@@ -77,7 +77,7 @@ main {
     width: 100%;
 }
 
-.login-container {
+.signup {
     background: white;
     border-radius: 20px;
     border: 1px solid rgb(53, 53, 53);
@@ -92,8 +92,27 @@ main {
     transition: transform 0.3s ease;
     /* transform: scale(0) */
 }
+.login{
+    transition: .3s ease;
+    transform: scale(1);
+}
 
-.login-container.inactive{
+.login.hide{
+    transform: scale(0)
+}
+
+.register{
+    transform: scale(0);
+    transition: .3s ease;
+
+}
+
+.register.show{
+    transform: scale(1)
+    
+}
+
+.signup.inactive{
     transform: scale(0);
 }
 
@@ -101,7 +120,7 @@ main {
   filter: blur(3px);
 }
 
-.login-container form{
+.signup form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,7 +129,7 @@ main {
     margin: 20px;
 }
 
-.login-container p{
+.signup p{
     font-size: 12px;
 }
 
