@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" id="logo">
+            <p>ToDo</p>
+        </a>
+        <div class="nav-containt">
+            <div id="user">
+                <span class="material-symbols-outlined">account_circle</span>
+                <p class="username"></p>
+            </div>
+            <button class="btn" id="login-btn">Login</button>
+        </div>
+    </nav>
+    <main>
+        <h1>Hello!, <span class="username"></span> <br>You are logged in</h1>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action=""class="Login-form">
+                <input type="text" name="username" id="loginUser" placeholder="User Name">
+                <input type="password" name="password" id="loginPass" placeholder="Password">
+                <button class="btn">Submin</button>
+            </form>
+            <p>Don't have a account?<a href="#">Register</a></p>
+        </div>
+        <span class="loader"></span>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
