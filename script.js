@@ -26,6 +26,7 @@ function registerUser() {
   .then(res => res.json())
   .then(data => {
     console.log(data.status);
+    console.log("register")
   })
 }
 
