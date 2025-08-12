@@ -84,13 +84,13 @@ main {
     position: absolute;
     width: 300px;
     height: 300px;
-    transform: translateY(-30px);
+    /* transform: translateY(-20px); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
-    /* transform: scale(0) */
+    top: 25vh;
 }
 .login{
     transition: .3s ease;
