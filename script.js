@@ -11,7 +11,7 @@ let loginPage = document.querySelector('.login')
 let regPage = document.querySelector('.register')
 
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbxrnKd3EFgCf9zeIb_BsEnY0AmyEDTc6b_j5lAmjYrre9eUY6yiEdMZq67nhPRU6g1RBQ/exec"; // from Apps Script
+const scriptURL = "https://script.google.com/macros/s/AKfycbzLhQUj4cA2fPSYQy8wJH2PndKP-Mrckx8L89aPPtlys_19uOQmOZJpxuiAj1tLk8zH_g/exec"; // from Apps Script
 
 function registerUser() {
   fetch(scriptURL, {
@@ -27,6 +27,7 @@ function registerUser() {
   .then(data => {
     console.log(data.status);
     console.log("register")
+    loader.style.display = 'none'
   })
 }
 
@@ -70,6 +71,8 @@ loginForm.addEventListener('submit', (e) => {
 })
 
 regForm.addEventListener('submit', (e)=>{
+  regPage.classList.add("blur-effect");
+  loader.style.display = 'block'
   e.preventDefault()
   registerUser()
 })
