@@ -91,36 +91,37 @@ main {
     align-items: center;
     transition: transform 0.3s ease;
     top: 25vh;
+    /* display: none; */
 }
-.login{
+
+.login {
     transition: .3s ease;
     transform: scale(1);
 }
 
-.login.hide{
+.login.hide {
     transform: scale(0)
 }
 
-.register{
+.register {
     transform: scale(0);
     transition: .3s ease;
 
 }
 
-.register.show{
+.register.show {
     transform: scale(1)
-    
 }
 
-.signup.inactive{
+.signup.inactive {
     transform: scale(0);
 }
 
 .blur-effect {
-  filter: blur(3px);
+    filter: blur(3px);
 }
 
-.signup form{
+.signup form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,7 +130,7 @@ main {
     margin: 20px;
 }
 
-.signup p{
+.signup p {
     font-size: 12px;
 }
 
@@ -147,13 +148,75 @@ main {
     /* display: block; */
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    }
+}
 
-    @keyframes rotation {
+@keyframes rotation {
     0% {
         transform: translateY(-40px) rotate(0deg);
     }
+
     100% {
-        transform:translateY(-40px) rotate(360deg);
+        transform: translateY(-40px) rotate(360deg);
     }
-    } 
+}
+
+
+.list-container {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgb(53, 53, 53);
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    padding: 20px;
+    top: 80px;
+    display: none;
+}
+
+.list-container h2{
+    text-align: center;
+    margin: 10px;
+}
+
+.list-container form {
+    width: 90%;
+    height: 10%;
+    /* background: red; */
+    border: 1px solid rgb(53, 53, 53);
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+#input-text {
+    all: unset;
+    width: 88%;
+    padding: 5px;
+    height: 100%;
+
+}
+
+.listbtn {
+    width: 10%;
+    height: 100%;
+}
+
+hr{
+    border: 1px solid black;
+    width: 100%;
+    /* margin: 10px; */
+}
+
+#todo-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    width: 90%;
+    margin: 10px;
+}

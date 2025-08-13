@@ -3,15 +3,17 @@
 const loginForm = document.querySelector('.Login-form')
 const regForm = document.querySelector('.reg-form')
 const loginBtn = document.querySelector('#login-btn')
-let loginCont = document.querySelector('.signup')
-let loader = document.querySelector('.loader')
-let regLink = document.querySelector('.login p a')
-let loginLink = document.querySelector('.register p a')
-let loginPage = document.querySelector('.login')
-let regPage = document.querySelector('.register')
+const loginCont = document.querySelector('.signup')
+const loader = document.querySelector('.loader')
+const regLink = document.querySelector('.login p a')
+const loginLink = document.querySelector('.register p a')
+const loginPage = document.querySelector('.login')
+const regPage = document.querySelector('.register')
+const listContainer = document.querySelector('.list-container ')
 
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbzLhQUj4cA2fPSYQy8wJH2PndKP-Mrckx8L89aPPtlys_19uOQmOZJpxuiAj1tLk8zH_g/exec"; // from Apps Script
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbzzGwQCtjHzYvqwZuBnvoAq9rYkO3VpD3_oLpzPaSTOI4LjJtEZhZPCzDW4zegs9VrGRA/exec"; // from Apps Script
 
 function registerUser() {
   fetch(scriptURL, {
@@ -42,13 +44,14 @@ function loginUser() {
   })
     .then(res => res.json())
     .then(data => {
-      console.log(data.message);
+      console.log(data)
+      console.log(data.name);
       console.log(data.id);
       if (data.success) {
         // alert("Logged In");
         let userName = document.querySelectorAll('.username')
         userName.forEach((user) => {
-          user.textContent = data.message
+          user.textContent = data.name
         })
         loginCont.classList.add('inactive')
         loginBtn.textContent = 'Logout'
@@ -57,6 +60,7 @@ function loginUser() {
 
       }
       loader.style.display = 'none'
+      listContainer.style.display = "block"
     });
 }
 loginBtn.onclick = null;

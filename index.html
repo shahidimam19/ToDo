@@ -23,7 +23,7 @@
         </div>
     </nav>
     <main>
-        <h1>Hello!, <span class="username"></span> <br>You are logged in</h1>
+        <!-- <h1>Hello!, <span class="username"></span> <br>You are logged in</h1> -->
         <div class="signup login">
             <h2>Login</h2>
             <form action=""class="Login-form">
@@ -44,6 +44,19 @@
             <p>Already have an account? <a href="#">Login</a></p>
         </div>
         <span class="loader"></span>
+        <div class="list-container">
+            <h2>To Do List</h2>
+            <form action="">
+                <textarea name="" id="input-text" placeholder="Write here something to add...."></textarea>
+                <button class="listbtn" type="submit" id="addtodo">+</button>
+            </form>
+            <hr>
+            <section id="todo-list">
+                <input type="checkbox" class="checkbox">
+                <div class="list-item"><p>today i have to do shopping</p></div>
+            </section>
+    
+        </div>
     </main>
 
     <script src="script.js"></script>
