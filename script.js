@@ -46,7 +46,7 @@ function loginUser() {
     .then(data => {
       console.log(data)
       console.log(data.name);
-      console.log(data.id);
+      // console.log(data.id);
       if (data.success) {
         // alert("Logged In");
         let userName = document.querySelectorAll('.username')
