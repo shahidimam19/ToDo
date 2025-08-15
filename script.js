@@ -9,7 +9,7 @@ const regLink = document.querySelector('.login p a')
 const loginLink = document.querySelector('.register p a')
 const loginPage = document.querySelector('.login')
 const regPage = document.querySelector('.register')
-const listContainer = document.querySelector('.list-container ')
+const listContainer = document.querySelector('.listcontainer ')
 
 
 
@@ -57,10 +57,10 @@ function loginUser() {
         loginBtn.textContent = 'Logout'
         loginBtn.onclick = logoutUser;
         loginCont.classList.remove("blur-effect");
+        listContainer.style.display = "block"
 
       }
       loader.style.display = 'none'
-      listContainer.style.display = "block"
     });
 }
 loginBtn.onclick = null;

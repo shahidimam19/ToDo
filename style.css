@@ -161,7 +161,7 @@ main {
 }
 
 
-.list-container {
+.listcontainer {
     background: white;
     border-radius: 20px;
     border: 1px solid rgb(53, 53, 53);
@@ -177,12 +177,12 @@ main {
     display: none;
 }
 
-.list-container h2{
+.listcontainer h2{
     text-align: center;
     margin: 10px;
 }
 
-.list-container form {
+.listcontainer form {
     width: 90%;
     height: 10%;
     /* background: red; */
