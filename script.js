@@ -60,7 +60,7 @@ function loginUser() {
         listContainer.style.display = "block"
 
       }
-      loader.style.display = 'none'
+      if (loader) loader.style.display = 'none';
     });
 }
 loginBtn.onclick = null;
