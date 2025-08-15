@@ -10,10 +10,15 @@ const loginLink = document.querySelector('.register p a')
 const loginPage = document.querySelector('.login')
 const regPage = document.querySelector('.register')
 const listContainer = document.querySelector('.listcontainer')
+const todoList = document.querySelector('#todo-list ul')
+const addTodo = document.getElementById('addTodo')
+const activeUser = document.querySelector('#user p')
+// console.log(addTodo)
 
 
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbzzGwQCtjHzYvqwZuBnvoAq9rYkO3VpD3_oLpzPaSTOI4LjJtEZhZPCzDW4zegs9VrGRA/exec"; // from Apps Script
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbw2WB6D0V4n3zbanK9wyGzkLZGfBvE7AOOViIwC9_GqBDAsajIMoyR2TuWtt5WY29tn/exec"; // from Apps Script
 
 function registerUser() {
   fetch(scriptURL, {
@@ -25,12 +30,12 @@ function registerUser() {
       name: document.getElementById("name").value,
     })
   })
-  .then(res => res.json())
-  .then(data => {
-    console.log(data.status);
-    console.log("register")
-    loader.style.display = 'none'
-  })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.status);
+      console.log("register")
+      loader.style.display = 'none'
+    })
 }
 
 function loginUser() {
@@ -44,25 +49,51 @@ function loginUser() {
   })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
-      console.log(data.name);
+
       // console.log(data.id);
       if (data.success) {
+        console.log(data.sheetData[0])
+        console.log(data.name);
         // alert("Logged In");
         let userName = document.querySelectorAll('.username')
         userName.forEach((user) => {
           user.textContent = data.name
+          user.setAttribute("sessionId", data.id);
         })
         loginCont.classList.add('inactive')
         loginBtn.textContent = 'Logout'
         loginBtn.onclick = logoutUser;
         loginCont.classList.remove("blur-effect");
         listContainer.style.display = "block"
+        data.sheetData.forEach((note) => {
+          let noteDiv = document.createElement('li')
+          noteDiv.textContent = note[1]
+          todoList.appendChild(noteDiv)
+
+        })
 
       }
       if (loader) loader.style.display = 'none';
     });
 }
+
+// ------add data------------------
+function addData(id) {
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify({
+      action: "addData",
+      userId: id,
+      rowData: document.getElementById("input-text").value
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      todoList.innerHTML = ""
+    })
+}
+
+
 loginBtn.onclick = null;
 
 
@@ -74,11 +105,18 @@ loginForm.addEventListener('submit', (e) => {
   loginUser()
 })
 
-regForm.addEventListener('submit', (e)=>{
+regForm.addEventListener('submit', (e) => {
   regPage.classList.add("blur-effect");
   loader.style.display = 'block'
   e.preventDefault()
   registerUser()
+})
+
+addTodo.addEventListener('submit', (e) => {
+  e.preventDefault()
+  let activeSession = activeUser.getAttribute("sessionId")
+  addData(activeSession)
+  loginUser()
 })
 
 
