@@ -9,7 +9,7 @@ const regLink = document.querySelector('.login p a')
 const loginLink = document.querySelector('.register p a')
 const loginPage = document.querySelector('.login')
 const regPage = document.querySelector('.register')
-const listContainer = document.querySelector('.listcontainer ')
+const listContainer = document.querySelector('.listcontainer')
 
 
 
